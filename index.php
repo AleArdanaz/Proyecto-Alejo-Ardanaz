@@ -45,12 +45,13 @@
 			<h3 class="titleheader">Ale</h3>
 			<nav>
 				<a class="ancla" href="#info">Info</a>
+				<a class="ancla" href="#contacto">Contacto</a>
 
 			</nav>
 		</header>
 	<main>
 		<div class="inicio" id="inicio">
-			<img src="imgs/AA_logo.jpg">
+			<img src="imgs/aalogo.png">
 			<h1 class="main-title">Alejo Ardanaz</h1>
 			<h2 class="main-subtitle">Web Developer</h2>
 		</div>
@@ -76,7 +77,7 @@
 			<h3>Febrero 2018 - Actualmente</h3>
 			<p>Desarrollo web Full Stack, Digital House Coding School - En curso</p>
 			<h3>Diciembre 2017 - Finalizado</h3>
-			<p>Instituto San Román - Bachiller con orientación econónmica</p>
+			<p>Instituto San Román - Bachiller con orientación económica</p>
 			<h3>Julio 2016 - Finalizado</h3>
 			<p>First Certificate - Cambridge</p>
 		</div>
@@ -91,7 +92,7 @@
 		</div>
 		</div>
 		</main>
-		<div class="contacto">
+		<div class="contacto"id="contacto">
 			<h2>Contacto</h2>
 			<form action="index.php" method="post" class="form-consulta">
 
@@ -134,10 +135,7 @@ if (isset($_POST['enviado'])) {
 				@mail($email_to, $email_subject, $cuerpo, $headers);
 
 				echo "¡El formulario se ha enviado con éxito!";
-	}
-		if(!isset($_POST['nombre']) ||
-		!isset($_POST['email']) ||
-		!isset($_POST['consulta'])) {
+	} else {
 
 		echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
 		echo "Por favor, vuelva atrás y verifique la información ingresada<br />";

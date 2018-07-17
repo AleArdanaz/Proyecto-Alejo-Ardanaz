@@ -80,9 +80,10 @@ main {
 }
 .inicio img {
 	max-width: 300px;
-	border-radius: 50%;
+	border-radius: 700%;
 	padding-top: 30px;
 	padding-bottom: 15px;
+	filter: grayscale(100%);
 }
 .info {
 	margin-top: 70px;
