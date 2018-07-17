@@ -1,30 +1,39 @@
 <?php
-if ($_POST) {
+function validarDatos($datos){
+  $errores=[];
 
-$nombre=$_POST["nombre"];
-$email=$_POST["email"];
-$mensaje=$_POST["mensaje"];
-$para="alejo.ardanaz@gmail.com";
-$titulo="Ale Ardanaz";
-
-if(!isset($_POST['nombre']) ||
-!isset($_POST['email']) ||
-!isset($_POST['mensaje'])) {
-
-echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
-echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
-die();
+  if($datos["nombre"]==""){
+    $errores[]="nombre";
+  }
+  if ($datos["email"]=="") {
+    $errores[]="email";
+  }elseif (filter_var($datos["email"],FILTER_VALIDATE_EMAIL)==false) {
+    $errores["email"]="Por Favor ingrese un email valido";
+  }
+  if ($datos["consulta"]=="") {
+    $errores[]="consulta";
+  }
+  return $errores;
 }
-$email_message = "Detalles del formulario de contacto:\n\n";
-$email_message .= "Nombre: " . $_POST['nombre'] . "\n";
-$email_message .= "E-mail: " . $_POST['email'] . "\n";
-$email_message .= "Comentarios: " . $_POST['mensaje'] . "\n\n";
+  function enviarMail() {
+    $email_to = "alejo.ardanaz@gmail.com";
+    $email_subject = "Contacto desde el sitio web";
 
-$headers = 'From: '.$email."\r\n".
-'Reply-To: '.$email."\r\n" .
-'X-Mailer: PHP/' . phpversion();
-@mail($para, $titulo, $email_message, $headers);
 
-echo "¡El formulario se ha enviado con éxito!";
+    $cuerpo = "Nombre y apellido: " . $_POST["nombre"] . "\r\n";
+    $cuerpo .= "Email: " . $_POST["email"] . "\r\n";
+    $cuerpo .= "Consulta: " . $_POST["consulta"] . "\r\n";
+
+
+
+    $headers  = "MIME-Version: 1.0\n";
+    $headers .= "Content-type: text/plain; charset=utf-8\n";
+    $headers .= "X-Priority: 3\n";
+    $headers .= "X-MSMail-Priority: Normal\n";
+    $headers .= "X-Mailer: php\n";
+    $headers .= "From: \"".$_POST['nombre']."\" <".$_POST["email"].">\n";
+    @mail($email_to, $email_subject, $cuerpo, $headers);
+
+
   }
 ?>
