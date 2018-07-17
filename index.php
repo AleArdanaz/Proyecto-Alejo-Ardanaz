@@ -110,7 +110,7 @@
 			</form>
 			<?php
 if (isset($_POST['enviado'])) {
-		if(isset($_POST['email']) &&
+			if(isset($_POST['email']) &&
 			isset($_POST['nombre']) &&
 			isset($_POST['consulta'])) {
 
@@ -135,15 +135,15 @@ if (isset($_POST['enviado'])) {
 
 				echo "¡El formulario se ha enviado con éxito!";
 	}
-		if(!isset($_POST['nombre']) ||
-		!isset($_POST['email']) ||
-		!isset($_POST['consulta'])) {
+		elseif(!isset($_POST['nombre']) ||
+			!isset($_POST['email']) ||
+			!isset($_POST['consulta'])) {
 
-		echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
-		echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
-		die();
-		}
+			echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
+			echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
+			die();
 			}
+				}
 	?>
 
 		</div>
