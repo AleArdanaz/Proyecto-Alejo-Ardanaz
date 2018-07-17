@@ -1,4 +1,8 @@
+<?php
+require_once("funciones.php");
 
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,56 +99,34 @@
 			<h2>Contacto</h2>
 			<form action="index.php" method="post" class="form-consulta">
 
-					<label>Nombre y apellido: <span>*</span>
-					</label>
-						<input type="text" name="nombre" placeholder="Nombre y apellido" class="campo-form" required>
-					<label>Email: <span>*</span>
-					</label>
-						<input type="email" name="email" placeholder="Email" class="campo-form" required>
+					<label>Nombre y apellido: <span>*</span></label>
+					<input type="text" name="nombre" placeholder="Nombre y apellido" class="campo-form" required>
 
-					<label>Consulta:
-					</label>
-						<textarea name="consulta" class="campo-form"></textarea>
+					<label>Email:<span>*</span></label>
 
-						<input type="submit" name="enviado" value="Enviar" class="btn-form">
+					<input type="email" name="email" placeholder="Email" class="campo-form" required>
+
+					<label>Consulta:</label>
+					<textarea name="consulta" class="campo-form"></textarea>
+
+					<input type="submit" name="enviado" value="Enviar" class="btn-form">
 			</form>
+
 			<?php
-if (isset($_POST['enviado'])) {
-			if(isset($_POST['email']) &&
-			isset($_POST['nombre']) &&
-			isset($_POST['consulta'])) {
-
-
-				$email_to = "alejo.ardanaz@gmail.com";
-				$email_subject = "Contacto desde el sitio web";
-
-
-				$cuerpo = "Nombre y apellido: " . $_POST["nombre"] . "\r\n";
-				$cuerpo .= "Email: " . $_POST["email"] . "\r\n";
-				$cuerpo .= "Consulta: " . $_POST["consulta"] . "\r\n";
-
-
-
-				$headers  = "MIME-Version: 1.0\n";
-				$headers .= "Content-type: text/plain; charset=utf-8\n";
-				$headers .= "X-Priority: 3\n";
-				$headers .= "X-MSMail-Priority: Normal\n";
-				$headers .= "X-Mailer: php\n";
-				$headers .= "From: \"".$_POST['nombre']."\" <".$_POST["email"].">\n";
-				@mail($email_to, $email_subject, $cuerpo, $headers);
-
-				echo "¡El formulario se ha enviado con éxito!";
-	}
-		elseif(!isset($_POST['nombre']) ||
-			!isset($_POST['email']) ||
-			!isset($_POST['consulta'])) {
-
-			echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
-			echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
-			die();
+			if ($_POST) {
+				$nombre=$_POST["nombre"];
+				$email=$_POST["email"];
+				$consulta=$_POST["consulta"];
+				$errores=validarDatos($_POST);
+			 if (empty($errores)) {
+				enviarMail();
+				echo "La consulta ha sido realizada!";
+			} else{
+				
+				echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
+				echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
 			}
-				}
-	?>
+		} ?>
 
 		</div>
 		<div class="cierre">
