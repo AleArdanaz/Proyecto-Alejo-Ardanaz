@@ -46,18 +46,20 @@ require_once("funciones.php");
 
 });
 			</script>
-			<h3 class="titleheader">Ale</h3>
+      <nav>
+        <h3 class="titleheader"><a href="#inicio">Ale</a></h3>
+      </nav>
 			<nav>
 				<a class="ancla" href="#info">Info</a>
+        <a class="ancla "href="#contacto">Contacto</a>
 
 			</nav>
 		</header>
 	<main>
 		<div class="inicio" id="inicio">
-			<img src="imgs/AA_logo.jpg">
 			<h1 class="main-title">Alejo Ardanaz</h1>
 			<h2 class="main-subtitle">Web Developer</h2>
-		</div>
+    		</div>
 		<div class="info" id="info">
 			<h2>Acerca de mi</h2>
 			<div class="asd">
@@ -69,6 +71,7 @@ require_once("funciones.php");
 					<p>Nuñez, CABA</p>
 					<p>alejo.ardanaz@gmail.com</p>
 					<p>En busqueda de desafíos</p>
+          <p>| Simple |</p>
 			</div>
 		</div>
 	</div>
@@ -76,11 +79,11 @@ require_once("funciones.php");
 		<div class="academica">
 			<h2>Formación académica</h2>
 			<h3>Marzo 2018 - Actualmente</h3>
-			<p>Licenciatura en Sistemas de información, Universidad de Buenos Aires - En curso</p>
+			<p>Licenciatura en Sistemas de información de las Organizaciones, Universidad de Buenos Aires - En curso</p>
 			<h3>Febrero 2018 - Actualmente</h3>
 			<p>Desarrollo web Full Stack, Digital House Coding School - En curso</p>
 			<h3>Diciembre 2017 - Finalizado</h3>
-			<p>Instituto San Román - Bachiller con orientación econónmica</p>
+			<p>Instituto San Román - Bachiller con orientación económica</p>
 			<h3>Julio 2016 - Finalizado</h3>
 			<p>First Certificate - Cambridge</p>
 		</div>
@@ -95,7 +98,7 @@ require_once("funciones.php");
 		</div>
 		</div>
 		</main>
-		<div class="contacto">
+		<div class="contacto" id="contacto">
 			<h2>Contacto</h2>
 			<form action="index.php" method="post" class="form-consulta">
 
@@ -122,18 +125,17 @@ require_once("funciones.php");
 				enviarMail();
 				echo "La consulta ha sido realizada!";
 			} else{
-				
+
 				echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
 				echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
 			}
 		} ?>
 
 		</div>
-		<div class="cierre">
-			<h3>Disponibilidad horaria: Part Time | Por horas | Full Time</h3>
-			<h3>Referencias a disposición.</h3>
-			<a href="#inicio" class="volver">Volver al inicio</a>
-		</div>
+    <div class="footer">
+      <h3>2018</h3>
+      <h3>alejo.ardanaz@gmail.com</h3>
+    </div>
 	</div>
 </body>
 </html>

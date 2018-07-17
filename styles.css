@@ -1,6 +1,10 @@
 * {
 	box-sizing: border-box;
 }
+* a{
+	text-decoration: none;
+	color: white;
+}
 body {
 	margin-top: 0px;
 	margin-right: 0px;
@@ -29,6 +33,10 @@ header {
 	 z-index: 1000;
 
 	}
+	.titleheader {
+		font-size: 40px;
+		text-decoration: none;
+	}
 .anclas {
 	margin: 0 auto;
 }
@@ -39,7 +47,7 @@ nav {
 	flex-direction: row;
 	justify-content: space-around;
 }
-nav a {
+.ancla {
 	font-size: 20px;
 	text-decoration: none;
 	color: white;
@@ -48,13 +56,9 @@ nav a {
 	border-radius: 7px;
 	padding: 3px;
 }
-nav a:hover {
+.ancla :hover {
 	background-color: white;
 	color: black;
-}
-.titleheader {
-	font-size: 40px;
-	align-items: center;
 }
 .anclainfo {
 	text-align: right;
@@ -63,7 +67,7 @@ nav a:hover {
 	text-align: right;
 }
 main {
-	background-image: url(imgs/fondo.jpg);
+	background-color: black;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -72,18 +76,17 @@ main {
 }
 .inicio {
 
-	height: 500px;
+
 	color: white;
 	width: 100%;
-	height: 100%;
+	height: 450px;
 	align-items: center;
+	justify-content: center;
+
 }
-.inicio img {
-	max-width: 300px;
-	border-radius: 700%;
-	padding-top: 30px;
-	padding-bottom: 15px;
-	filter: grayscale(100%);
+.main-title{
+	font-size: 50px;
+	padding-top: 150px;
 }
 .info {
 	margin-top: 70px;
@@ -218,14 +221,22 @@ textarea {
 	min-height: 150px!important;
 	width: 70%;
 }
+.footer {
+	background-color: black;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+	color: white;
+	margin-top: 30px;
+}
 @media only screen and (max-width: 500px) {
     .textoinfo {width: 80%}
     .info img {width: 80%}
     .inicio img {width: 50%;
     	border-radius: 40%;}
     main {
-    	background-image: url(imgs/fondo1.jpg);
-    	background: #66999 url(imgs/fondo1.jpg);
+    	background-color: black;
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: cover;
