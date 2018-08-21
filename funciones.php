@@ -35,5 +35,10 @@ function validarDatos($datos){
     @mail($email_to, $email_subject, $cuerpo, $headers);
 
 
+
+
+
+
+
   }
 ?>
