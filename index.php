@@ -24,20 +24,22 @@ require_once("funciones.php");
 </head>
 <body>
 	<div class="container">
-		<header id="header" class="header1">
+	<main>
+    <header id="header" class="header1">
       <nav>
         <h3 class="titleheader"><a href="#inicio" class="anclap">Ale</a></h3>
       </nav>
-			<nav class="anclas-header">
-				<a class="ancla" href="#info">Info</a>
+      <nav class="anclas-header">
+        <a class="ancla" href="#info">Info</a>
         <a class="ancla "href="#contacto">Contacto</a>
 
-			</nav>
-		</header>
-	<main>
+      </nav>
+    </header>
 		<div class="inicio" id="inicio">
-			<h1 class="main-title">Alejo Ardanaz</h1>
-			<span class="word" id="word">Web Developer</span>
+      <div class="titulos">
+        <h1 class="main-title">Alejo Ardanaz</h1>
+        <span class="word" id="word">Web Developer</span>
+      </div>
     </div>
 		<div class="info" id="info">
 			   <h2 class="acerca">Acerca de mi</h2>

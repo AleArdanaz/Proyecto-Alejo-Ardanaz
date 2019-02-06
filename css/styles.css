@@ -103,7 +103,6 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
-	padding-top: 70px;
 }
 .inicio {
 
@@ -113,11 +112,23 @@ body {
 	align-items: center;
 	justify-content: center;
 	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.titulos{
+	height: 50%;
+	margin: 0 auto;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 
 }
 .main-title{
-	font-size: 50px;
-	padding-top: 150px;
+	font-size: 60px;
 	padding-bottom: 30px;
 	margin: 0 auto;
 
