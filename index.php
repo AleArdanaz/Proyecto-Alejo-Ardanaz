@@ -22,7 +22,7 @@ require_once("funciones.php");
 	<title>Ale Ardanaz</title>
 
 </head>
-<body>
+<body >
 	<div class="container">
 	<main>
     <header id="header" class="header1">
@@ -38,7 +38,24 @@ require_once("funciones.php");
 		<div class="inicio" id="inicio">
       <div class="titulos">
         <h1 class="main-title">Alejo Ardanaz</h1>
-        <span class="word" id="word">Web Developer</span>
+        <span class="word" id="word">Developer</span>
+        <div class="menssage">
+          <?php
+          if ($_POST) {
+            $nombre=$_POST["nombre"];
+            $email=$_POST["email"];
+            $consulta=$_POST["consulta"];
+            $errores=validarDatos($_POST);
+            if (empty($errores)) {
+              enviarMail();
+              echo "La consulta ha sido realizada!";
+            } else{
+
+              echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
+              echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
+            }
+          } ?>
+        </div>
       </div>
     </div>
 		<div class="info" id="info">
@@ -53,13 +70,14 @@ require_once("funciones.php");
 					<p class="wow fadeInLeft">27/6/2000</p>
 					<p class="wow fadeInLeft">Nuñez, CABA</p>
 					<p class="wow fadeInLeft">alejo.ardanaz@gmail.com</p>
-					<p class="wow fadeInLeft">En busqueda de desafíos</p>
+					<p class="wow fadeInLeft">Siempre con ganas de aprender</p>
           <p class="wow fadeInLeft">| Simple |</p>
           <div class="social-media">
-            <button type="button" value="" onclick="document.getElementById('twitter').innerHTML = twitter();document.getElementById('twitter').classList.add('wow','bounceIn');" class="botonr wow fadeInLeft">
-            <img class="logos"src="imgs/logotw.png" onmouseover="agrandar();"> </button>
-            <button type="button" onclick="document.getElementById('insta').innerHTML = insta();document.getElementById('insta').classList.add('wow','bounceIn');" class="botonr wow fadeInLeft"><img class="logos"src="imgs/logoinsta.png"></button>
-
+            <button type="button" value="" class="botonr wow fadeInLeft">
+            <a href="https://www.linkedin.com/in/alejo-ardanaz-291b62168/" target="_blank"><img class="logos"src="imgs/logoli.png" onmouseover="agrandar();"></a> </button>
+            <button type="button" class="botonr wow fadeInLeft">
+              <a href="https://github.com/AleArdanaz?tab=repositories" target="_blank"><img class="logos"src="imgs/logogit.png"></a>
+              </button>
           </div>
           <div class="sm1">
             <div style="width:40%;">
@@ -75,13 +93,13 @@ require_once("funciones.php");
 	<div class="mas-info" class="description wow">
 		<div class="academica" class="wow fadeInLeft">
 			<h2 class="titulos-info">Formación académica</h2>
-  		<h3>Marzo 2018 - Actualmente</h3>
-			<p>Licenciatura en Sistemas de información de las Organizaciones, Universidad de Buenos Aires - En curso</p>
-			<h3>Febrero 2018 - Actualmente</h3>
-			<p>Desarrollo web Full Stack, Digital House Coding School - En curso</p>
-			<h3>Diciembre 2017 - Finalizado</h3>
+  		<h3>Marzo 2018 - En curso</h3>
+			<p>Licenciatura en Sistemas de información de las Organizaciones, Universidad de Buenos Aires</p>
+			<h3>Febrero 2018 - Agosto 2018</h3>
+			<p>Desarrollo web Full Stack, Digital House Coding School</p>
+			<h3>Marzo 2012 - Diciembre 2018</h3>
 			<p>Instituto San Román - Bachiller con orientación económica</p>
-			<h3>Julio 2016 - Finalizado</h3>
+			<h3>Julio 2016</h3>
 			<p>First Certificate - Cambridge</p>
 		</div>
 		<div class="skills">
@@ -111,25 +129,9 @@ require_once("funciones.php");
 					<input type="submit" name="enviado" value="Enviar" class="btn-form wow bounceIn">
 			</form>
 
-			<?php
-			if ($_POST) {
-				$nombre=$_POST["nombre"];
-				$email=$_POST["email"];
-				$consulta=$_POST["consulta"];
-				$errores=validarDatos($_POST);
-			 if (empty($errores)) {
-				enviarMail();
-				echo "La consulta ha sido realizada!";
-			} else{
-
-				echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
-				echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
-			}
-		} ?>
-
 		</div>
     <div class="footer">
-      <h3>2018</h3>
+      <h3>2019</h3>
       <h3>alejo.ardanaz@gmail.com</h3>
     </div>
 	</div>

@@ -25,13 +25,13 @@ if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
 
 });
 
-var words = ['Web Developer', 'Estudiante','Freelance'];
+var words = ['Developer', 'Estudiante','Aprendiz'];
     wordWrapper = document.getElementById('word');
     wordWrapperContent = document.getElementById('word').innerHTML;
     addingWord = false;
     counter = 1;
 
-setInterval(function(){
+setInterval(function palabras(){
 
   if(wordWrapperContent.length > 0 && !addingWord ) {
     wordWrapper.innerHTML = wordWrapperContent.slice(0, -1);
@@ -55,15 +55,20 @@ setInterval(function(){
   if( counter == words.length) {
     counter = 0;
 }
-},100);
+},130);
 function cambioHeader(){
   if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
-    document.getElementById("header").className="header2" }else {
-      document.getElementById("header").className="header1";  }
+    header = document.getElementById("header");
+    header.className="header2" }
+    else {
+      header.className="header1";
+    }
   if (window.innerWidth < 1000) {
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      document.getElementById("header").className="header2" }else {
-        document.getElementById("header").className="header1";  }
+      header.className="header2" }
+      else {
+        header.className="header1";
+      }
     }
   }
 
