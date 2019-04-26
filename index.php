@@ -13,6 +13,8 @@ require_once("funciones.php");
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
       type="text/javascript" charset="utf-8"></script>
+      <script src="https://www.google.com/recaptcha/api.js" async defer>
+      </script>
   <link rel="text/javascript" src="js/wow.min.js">
   <script src="js/wow.min.js"></script>
              <script>
@@ -126,6 +128,8 @@ require_once("funciones.php");
 
 					<label>Consulta:</label>
 					<textarea name="consulta" class="campo-form"></textarea>
+          <div class="g-recaptcha" data-sitekey="6LdM4poUAAAAAH2btjW1ABWUI7ntKSppiJ-24XJc">
+          </div>
 					<input type="submit" name="enviado" value="Enviar" class="btn-form wow bounceIn">
 			</form>
 
